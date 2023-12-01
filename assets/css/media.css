@@ -1,0 +1,19 @@
+@media(max-width:768px) {
+  .media{
+    border: none  !important;
+  }
+}
+@media(max-width:718px) {
+    header{
+      background-position-x: -250px;
+    }
+}
+@media(max-width:430px) {
+  
+    .header-content{
+        align-items: start !important;
+    }
+    h1{
+        font-size: 40px !important;
+    }
+}
