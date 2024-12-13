@@ -41,9 +41,13 @@ a{
   background-color: #ff724c;
 }
 .header{
-  background-image: url(../img/introbg5.png) ;
-  background-size: contain;
+  background-position-y: 12rem;
+  /* background-color: #f57141; */
+  /* border-radius: 50%; */
+  background-image: url(../img/introbg5.png);
+  background-size: 31%;
   background-repeat: no-repeat;
+  background-position-x: 8rem;
 }
 nav .nav-link {
   color: #818181;
