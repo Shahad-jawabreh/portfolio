@@ -42,9 +42,8 @@ a{
 }
 .header{
   background-image: url(../img/introbg5.png) ;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position-y: -3rem ;
 }
 nav .nav-link {
   color: #818181;
@@ -99,7 +98,6 @@ nav .buttun i:hover{
   font-size: 60px;
   font-weight: 700;
   color: rgb(33, 37, 41);
-  text-transform: uppercase;
   font-family: 'Dosis', sans-serif;
 }
 .header-content p{
@@ -122,7 +120,7 @@ header .animantion{
   width: 0;
 }
   to{
-    width: 318px;
+    width: 250px;
   }
 }
 .block-icon .icon {
@@ -144,25 +142,6 @@ header .animantion{
   background-color: #3b5999;
 }
 
-.block-icon .dribbble{
-  
-  border: 1px solid #ea4c89;
-  color: #ea4c89;
-}
-.block-icon .dribbble:hover{
-  color: #fff;
-  background-color: #ea4c89;
-}
-
-.block-icon .behance{
-  
-  border: 1px solid #1769ff;
-  color: #1769ff;
-}
-.block-icon .behance:hover{
-  color: #fff;
-  background-color: #1769ff;
-}
 
 .block-icon .linkedin{
   
@@ -174,14 +153,14 @@ header .animantion{
   background-color: #0077b5;
 }
 
-.block-icon .google{
+.block-icon .github{
   
-  border: 1px solid #dd4b39;
-  color: #dd4b39;
+  border: 1px solid #0077b5;
+  color: #0077b5;
 }
-.block-icon .google:hover{
+.block-icon .github:hover{
   color: #fff;
-  background-color: #dd4b39;
+  background-color: #0077b5;
 }
 
 .block-icon .icon:hover{
@@ -198,6 +177,7 @@ header .animantion{
 .number-content p {
   font-size: 16px;
  font-family: 'Roboto', sans-serif; ;
+ 
 }
 .about-content{
   background-color: var(--main-color);
@@ -231,6 +211,7 @@ color: #818181;
   color: #818181;
   font-weight: 400;
   margin-bottom: 30px;
+  text-align: left
 }
 .services .box{
   position: relative;
@@ -248,81 +229,113 @@ color: #818181;
 .services .box:hover::before{
 height: 100%;
 }
-.Featured-Work{
+.Featured-Work {
   background-color: #f3f3f3;
 }
-.Featured-Work .nav-link{
-font-family: 'Raleway', sans-serif;
-border: 1px solid #5f5f5f;
-color: #5f5f5f;
-font-size: 13px;
-font-weight: 600;
+
+.Featured-Work .nav-link {
+  font-family: 'Raleway', sans-serif;
+  border: 1px solid #5f5f5f;
+  color: #5f5f5f;
+  font-size: 13px;
+  font-weight: 600;
 }
-.Featured-Work .nav-link.active{
+
+.Featured-Work .nav-link.active {
   color: white;
   background-color: var(--main-color);
   border: none;
 }
-.Featured-Work .box{
+
+.Featured-Work .box {
   position: relative;
+  height: 300px; /* Set a fixed height */
+  overflow: hidden; /* Ensure no content overflows */
+  display: flex;
+  flex-direction: column;
 }
-.box .fa-search-plus{
+
+.box img {
+  object-fit: cover; /* Ensure image covers the entire box */
+  height: 100%;
+}
+
+.box .fa-search-plus {
   color: white;
   background-color: var(--main-color);
   padding: 15px;
   border-radius: 50%;
-  transition:3s ;
+  transition: 3s;
 }
 
-.box .info{
-  height: 60px;
+.box .info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 110px;
   padding: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+  opacity: 0;
 }
-.Featured-Work .box .txt h3{
-  font-family: 'Raleway', sans-serif ;
-  font-size: 15px;
-    font-weight: 500;
-    color: #3b3b3b;
- 
-}
-.Featured-Work .box .txt p{
-  font-family: 'Raleway', sans-serif ;
-  font-size: 15px;
-    font-weight: 400;
-    color: #4c4c4c;
 
-  
+.Featured-Work .box .txt h3 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #3b3b3b;
 }
-.Featured-Work  .overllay{
-background-color: rgba(0, 0, 0, .09) ;
-transform: scaleY(0);
-transition: .5s;
+
+.Featured-Work .box .txt p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #4c4c4c;
+  size: inherit ;
+  margin: 0; /* Remove any margin that might cause overflow */
+  text-overflow: ellipsis; /* Truncate text with ellipsis if it overflows */
+  white-space: wrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide any overflowing text */
 }
-.Featured-Work  .overllay .fa-search-plus{
+
+.Featured-Work .overllay {
+  background-color: rgba(0, 0, 0, 0.09);
+  transform: scaleY(0);
+  transition: 0.5s;
+}
+
+.Featured-Work .overllay .fa-search-plus {
   transform: scale(0);
-  transition: .5s;
+  transition: 0.5s;
 }
-.Featured-Work  .box:hover .overllay{
+
+.Featured-Work .box:hover .overllay {
   transform: scaleY(1);
 }
-.Featured-Work  .box:hover .fa-search-plus{
-  transform: scale(1)  rotate(-360deg) ;
+
+.Featured-Work .box:hover .fa-search-plus {
+  transform: scale(1) rotate(-360deg);
 }
-.Featured-Work .fa-search-plus:hover{
+
+.Featured-Work .fa-search-plus:hover {
   color: var(--main-color);
   background-color: transparent;
   border: 1px solid white;
 }
-.Featured-Work .info{
-  transition: .5s;
+
+.Featured-Work .info {
   opacity: 0;
   bottom: 40px;
- 
 }
-.Featured-Work  .box:hover .info{
-bottom: 0;
-opacity: 1;
+
+.Featured-Work .box:hover .info {
+  bottom: 0;
+  opacity: 1;
 }
+
 
 .Bio .content i {
   padding:  13px 12px;
@@ -345,6 +358,7 @@ background-color: #f3f3f3 ;
   
 }
 .Bio .desc{
+  padding-bottom: 35px;
   position: relative;
 }
 .Bio .desc:not(:last-child)::before  {
@@ -427,7 +441,7 @@ background-color: #f3f3f3 ;
   height: 50vh;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-x: 50%;
+  background-position: 50%;
 }
 .Download .txt p{
   color: #f3f3f3;
@@ -462,31 +476,7 @@ background-color: #f3f3f3 ;
 #carouselExampleIndicators .button.active {
   background-color: var(--main-color);
 }
-.clients .box h3{
-  color: #313131; 
-    font-family : 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-}
-.clients .box p ,.clients .box span {
-  color: #5b5b5b;
-    font-size: 16px;
-    text-transform: capitalize;
 
-}
-.clients .box p:nth-child(1){
-  font-family:sans-serif ;
-}
-.clients .box .para{
-  padding: 30px 12px;
-}
-
-.clients .box .para:hover ,.clients .box .para:hover span{
-  background-color: #5b5b5b;
-  color: #f3f3f3;
-  border-radius: 10px;
-
-}
 .Touch{
 
   background:  linear-gradient(rgba(255, 114, 76,.85),rgba(255, 114, 76,.85)) , url(../img/contactbg.png) ;
